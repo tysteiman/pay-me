@@ -5,6 +5,7 @@ class CreatePayments < ActiveRecord::Migration[5.2]
       t.belongs_to :loan, foreign_key: true
       t.integer :amount
       t.boolean :approved, default: false
+      t.text :notes
 
       t.timestamps
     end

@@ -1,9 +1,9 @@
 module FlashHelper
     def flash_class klass
         val = 'alert alert-' + case klass
-        when 'alert'
+        when 'alert', 'danger'
             'danger'
-        when 'notice'
+        when 'notice', 'success'
             'success'
         else
             'info'

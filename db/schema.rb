@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_01_205418) do
+ActiveRecord::Schema.define(version: 2018_07_01_234602) do
 
   create_table "loans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "amount"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_07_01_205418) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "completed", default: false
   end
 
   create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_07_01_205418) do
     t.bigint "loan_id"
     t.integer "amount"
     t.boolean "approved", default: false
+    t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["loan_id"], name: "index_payments_on_loan_id"

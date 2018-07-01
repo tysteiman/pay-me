@@ -1,2 +1,6 @@
 <h1>View loan</h1>
 <p><%= @loan.inspect %></p>
+
+<% unless @loan.completed %>
+    <%= link_to('Log a payment', new_payment_path(@loan), class: 'btn btn-primary') %>
+<% end %>

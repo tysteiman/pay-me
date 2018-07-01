@@ -1,0 +1,11 @@
+<h2>Amount left on loan: <%= display_amount(@loan, true) %></h2>
+
+<%= simple_form_for @payment do |f| %>
+    <%= f.input :amount, input_html: { class: 'form-control', max: @loan.amount_remaining / 100, min: 1, value: 1 } %>
+    <%= f.input :notes, input_html: { class: 'form-control', placeholder: 'Some notes for the lender about the payment you made...' } %>
+
+    <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+    <%= f.input :loan_id, as: :hidden, input_html: { value: @loan.id } %>
+
+    <%= f.submit 'Log Payment', class: 'btn btn-primary mt-3' %>
+<% end %>
