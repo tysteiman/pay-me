@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2018_07_01_195006) do
     t.integer "amount"
     t.integer "lender_id"
     t.integer "borrower_id"
+    t.integer "amount_remaining"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

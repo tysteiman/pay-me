@@ -1,1 +1,13 @@
 <h1>Welcome to the home page!</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>Lended</h2>
+            <%= render 'loans', collection: @lended %>
+        </div>
+        <div class="col-lg-6">
+            <h2>Borrowed</h2>
+            <%= render 'loans', collection: @borrowed %>
+        </div>
+    </div>
+</div>
