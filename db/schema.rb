@@ -14,6 +14,8 @@ ActiveRecord::Schema.define(version: 2018_07_01_195006) do
 
   create_table "loans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "amount"
+    t.integer "lender_id"
+    t.integer "borrower_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
