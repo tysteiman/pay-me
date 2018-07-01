@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :payments
+
   scope :lended,   -> (id) { Loan.where(lender_id: id) }
   scope :borrowed, -> (id) { Loan.where(borrower_id: id) }
 
