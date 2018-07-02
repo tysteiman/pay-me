@@ -11,6 +11,10 @@ class Loan < ApplicationRecord
         self.save
     end
 
+    def percent_paid
+        (total_payments.to_f / amount.to_f) * 100
+    end
+
     private
 
     def total_payments
